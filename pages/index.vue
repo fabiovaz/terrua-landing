@@ -44,7 +44,7 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-6">
+          <div class="col-md-6">
             <h6>ola@agenciaterrua.com.br</h6>
             <p>
               SHN Q.2 Bl.F Ed.Executive Office Tower slj.58D<br />
@@ -95,7 +95,18 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
   transform: translate(-50%, -50%);
+  #parallax {
+    img {
+      @media screen and (max-width: 768px) {
+        width: 200%;
+        max-width: 600px;
+      }
+    }
+  }
 }
 footer {
   position: absolute;
