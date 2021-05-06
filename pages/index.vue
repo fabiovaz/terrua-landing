@@ -31,8 +31,8 @@
 
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
             <h6>ola@agenciaterrua.com.br</h6>
             <p>
               SHN Q.2 Bl.F Ed.Executive Office Tower slj.58D<br />
@@ -45,8 +45,41 @@
               +55 61 4042.8207
             </p>
           </div>
-          <div class="col-6">
-            <div class="social">social</div>
+          <div class="col-12 col-md-6">
+            <div class="social">
+              <div class="social__item">
+                <span> Assista ao nosso vídeo manisfesto </span>
+                <a href="https://www.youtube.com/watch?v=gF-wV-YExis" target="_blank">
+                  <div class="icon">
+                    <img src="~/assets/img/social_youtube.svg" />
+                  </div>
+                </a>
+              </div>
+
+              <div class="social__item">
+                <span> Siga-nos nas redes sociais </span>
+                  <a href="https://www.facebook.com/AgenciaTerrua" target="_blank">
+                    <div class="social__icon">
+                      <img src="~/assets/img/social_facebook.svg" />
+                    </div>
+                  </a>
+                  <a href="https://www.instagram.com/agenciaterrua/" target="_blank">
+                    <div class="social__icon">
+                      <img src="~/assets/img/social_instagram.svg" />
+                    </div>
+                  </a>
+                  <a href="https://twitter.com/agenciaterrua" target="_blank">
+                    <div class="social__icon">
+                      <img src="~/assets/img/social_twitter.svg" />
+                    </div>
+                  </a>
+                  <a href="https://www.linkedin.com/company/ag%C3%AAncia-terru%C3%A1/" target="_blank">
+                    <div class="social__icon">
+                      <img src="~/assets/img/social_linkedin.svg" />
+                    </div>
+                  </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -77,6 +110,15 @@ header {
   top: 5vh;
   left: 0;
   width: 100%;
+  .logo {
+    max-width: 200px;
+    @media screen and (max-width: 768px) {
+      max-width: 160px;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
 main {
   position: relative;
@@ -88,6 +130,10 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 768px) {
+      top: 100px;
+      transform: translate(-50%, 0);
+    }
     #parallax {
       min-height: 460px;
       position: relative;
@@ -112,11 +158,57 @@ footer {
   color: #fff;
   h6 {
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 500;
   }
   p {
     font-size: 0.8rem;
     font-weight: regular;
+  }
+  a {
+    transition: all .3s ease;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &__item {
+      display: flex;
+      align-items: center;
+      &:first-of-type {
+        margin-right: 12px;
+        @media screen and (max-width: 768px) {
+          margin-right: 0;
+        }
+      }
+      span {
+        margin-right: 10px;
+        max-width: 60px;
+        text-align: right;
+        font-size: 11px;
+        line-height: 12px;
+        @media screen and (max-width: 768px) {
+          margin-right: 5px;
+        }
+      }
+    }
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-right: 10px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      text-align: center;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
   }
 }
 </style>
