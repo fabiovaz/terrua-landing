@@ -11,31 +11,19 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="row">
-
-          <div id="parallax">
-            <div data-depth="0.1">
-              <img src="~/assets/img/logo.png">
-            </div>
-            <div data-depth="0.3">
-              <img src="~/assets/img/legos_1.png">
-            </div>
-            <div data-depth="0.4">
-              <img src="~/assets/img/legos_2.png">
-            </div>
-            <div data-depth="0.5">
-              <img src="~/assets/img/legos_3.png">
-            </div>
+      <div class="content">
+        <div id="parallax">
+          <div class="layer" data-depth="0.1">
+            <img src="~/assets/img/logo.png" />
           </div>
-
-          <div class="parallax">
-            <div class="pecas">
-
-            </div>
-            <div class="logo">
-
-            </div>
+          <div class="layer" data-depth="0.3">
+            <img src="~/assets/img/legos_1.png" />
+          </div>
+          <div class="layer" data-depth="0.4">
+            <img src="~/assets/img/legos_2.png" />
+          </div>
+          <div class="layer" data-depth="0.5">
+            <img src="~/assets/img/legos_3.png" />
           </div>
         </div>
       </div>
@@ -68,20 +56,19 @@
 
 <script>
 export default {
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
   methods: {
     startParallax() {
-      var scene = document.getElementById('parallax');
+      var scene = document.getElementById("parallax");
       var parallaxInstance = new Parallax(scene);
-    }
+    },
   },
-  mounted () {
-    this.startParallax()
-  }
-}
+  mounted() {
+    this.startParallax();
+  },
+};
 </script>
 
 <style lang="scss">
@@ -92,18 +79,27 @@ header {
   width: 100%;
 }
 main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  max-height: 100vh;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  transform: translate(-50%, -50%);
-  #parallax {
-    img {
-      @media screen and (max-width: 768px) {
-        width: 200%;
-        max-width: 600px;
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    #parallax {
+      min-height: 460px;
+      position: relative;
+      overflow: hidden;
+      .layer {
+        width: 100%;
+        height: 100%;
+        @media screen and (max-width: 768px) {
+          img {
+            max-width: 600px;
+          }
+        }
       }
     }
   }
@@ -113,13 +109,13 @@ footer {
   bottom: 5vh;
   left: 0;
   width: 100%;
-  color: #FFF;
+  color: #fff;
   h6 {
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: bold;
   }
   p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     font-weight: regular;
   }
 }
