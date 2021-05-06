@@ -33,7 +33,9 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-12 col-md-6">
-            <h6>ola@agenciaterrua.com.br</h6>
+            <a href="mailto:ola@agenciaterrua.com.br" target="_blank">
+              <h6>ola@agenciaterrua.com.br</h6>
+            </a>
             <p>
               SHN Q.2 Bl.F Ed.Executive Office Tower slj.58D<br />
               Brasília-DF Brasil CEP: 70702-000<br />
@@ -165,6 +167,7 @@ footer {
     font-weight: regular;
   }
   a {
+    color: #FFF;
     transition: all .3s ease;
     &:hover {
       transform: scale(1.1);
