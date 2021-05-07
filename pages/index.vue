@@ -25,6 +25,12 @@
           <div class="layer" data-depth="0.5">
             <img src="~/assets/img/legos_3.png" />
           </div>
+          <div class="layer" data-depth="0.2">
+            <div class="caption">
+              <h1>Página em</h1>
+              <h1>Reinvenção</h1>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -145,7 +151,27 @@ main {
         height: 100%;
         @media screen and (max-width: 768px) {
           img {
-            max-width: 600px;
+            max-width: 460px;
+          }
+        }
+        .caption {
+          z-index: 10;
+          position: absolute;
+          top: 50%;
+          right: 25px;
+          transform: translateY(calc(-50% - 40px));
+          @media screen and (max-width: 768px) {
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(0);
+            right: auto;
+            h1 {
+              text-align: center;
+            }
+          }
+          h1 {
+            text-transform: uppercase;
+            color: #FFF;
           }
         }
       }
